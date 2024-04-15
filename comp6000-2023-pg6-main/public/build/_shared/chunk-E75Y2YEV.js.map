@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["css-bundle-update-plugin-ns:C:\\Users\\wisdo\\GarageBooking-WO\\comp6000-2023-pg6\\node_modules\\@remix-run\\css-bundle\\dist\\esm\\index.js"],
+  "sourcesContent": ["/**\n * @remix-run/css-bundle v1.19.3\n *\n * Copyright (c) Remix Software Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.md file in the root directory of this source tree.\n *\n * @license MIT\n */\n// Injected by `cssBundlePlugin`\nlet cssBundleHref = typeof \"/build/css-bundle-XMPXI5NO.css\" === \"string\" ? \"/build/css-bundle-XMPXI5NO.css\" : undefined;\n\nexport { cssBundleHref };\n"],
+  "mappings": ";AAWA,IAAI,gBAAgB,OAAuD,mCAAmC;",
+  "names": []
+}

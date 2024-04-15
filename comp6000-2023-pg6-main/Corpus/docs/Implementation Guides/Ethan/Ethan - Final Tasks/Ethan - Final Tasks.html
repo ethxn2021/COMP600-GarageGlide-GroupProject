@@ -1,0 +1,997 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ethan - Final Tasks</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f3aa3842-1bb1-4ccb-92ca-16a728e273fc" class="page sans"><header><h1 class="page-title">Ethan - Final Tasks</h1><p class="page-description"></p></header><div class="page-body"><h2 id="aec0b120-817f-4d41-a209-88c5dd2e0164" class="">Previous Tasks</h2><ul id="b9bd783f-eadf-4062-9d4f-7f43f2893bc6" class="bulleted-list"><li style="list-style-type:disc">Feedbacks<ul id="23008dd7-8303-4ebf-97b7-d5d770bdb676" class="bulleted-list"><li style="list-style-type:circle">Customer Satisfaction Score</li></ul><ul id="fa4e8883-062c-4521-ace6-b1c2e8a71450" class="bulleted-list"><li style="list-style-type:circle">Reply to Customer Feedback</li></ul></li></ul><ul id="23365933-a717-495c-bb67-5ac2fb721e31" class="bulleted-list"><li style="list-style-type:disc">Calendar<ul id="da392755-e904-42b5-9c0e-876b0b0f3efc" class="bulleted-list"><li style="list-style-type:circle">Fix Month Section</li></ul><ul id="32c591b8-0116-41e1-be57-458d2cdba42f" class="bulleted-list"><li style="list-style-type:circle">Modifying existing bookings will automatically retrieve the Car Registration and Services (This will be done automatically if you follow the steps)</li></ul></li></ul><ul id="a4ae8017-ae4e-4a6e-800c-7c17631eb734" class="bulleted-list"><li style="list-style-type:disc">Search Box<ul id="996bf396-aa5e-4c34-9d1e-359078e1ab6c" class="bulleted-list"><li style="list-style-type:circle">Fix existing Bugs</li></ul></li></ul><hr id="bbfeb193-cd49-402d-9797-ab58cde2ef6c"/><h2 id="04d8ed36-5a67-4e42-b938-5c251922b925" class="">New Tasks</h2><ul id="d6760fc4-b348-4764-8432-22f1885cb34d" class="bulleted-list"><li style="list-style-type:disc">Staff Booking Management <ul id="f0e98bc9-0931-4d5d-9134-efdb3d83f208" class="bulleted-list"><li style="list-style-type:circle">Create a New Booking</li></ul></li></ul><hr id="9a3280f7-d9a2-4d38-8dcf-c58a34b90609"/><h1 id="abbfe128-5911-4996-a6cb-62bffedced19" class="">Previous Tasks</h1><h2 id="d589859c-e78c-437c-acfd-ce74c6bbc20d" class="">Task 1. Feedback → Feedback Table Length</h2><figure id="15c0df32-3f54-423a-bc6a-a2a1f46729f3"><div class="source"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled.mp4">https://prod-files-secure.s3.us-west-2.amazonaws.com/314ec157-d4bf-4bc1-a05f-bd8b98157b76/19bd06ad-d783-4fe9-a20b-7ea88a081cae/Untitled.mp4</a></div></figure><p id="5856c86c-7792-43c3-ad36-8df37699a8f1" class="">
+</p><hr id="8b260e54-199e-4d5f-b9bb-05f0f8dea08e"/><h2 id="1c08aae7-3b93-4fe7-8515-fdecff4c56a9" class="">Task 2. Feedback → Customer Satisfaction Score</h2><figure id="e0e2f473-3306-4fd7-88ae-0a4ef33e59da" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled.png"><img style="width:3832px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled.png"/></a><figcaption>Here it displays Gauge Data of all locations and Canterbury (because the Manager logged in works at Canterbury). If the manager works at Medway, they’ll be displayed the Gauged Data in Medway.</figcaption></figure><p id="74facc64-b7f2-40a3-93f9-36d6e07ca892" class="">You need to make two gauge data charts.</p><ol type="1" id="f6252b9d-d8ef-42f5-8a8e-bc7c020282b0" class="numbered-list" start="1"><li>Display Satisfaction Percentage average of all Locations</li></ol><ol type="1" id="1fc2608b-6c57-41a2-b31d-d0cb67fe54fc" class="numbered-list" start="2"><li>Customer Satisfaction Percentage depending by the Garage Location</li></ol><p id="f621b620-bf05-41e6-9fa0-c9d80f15511d" class="">
+</p><p id="82336592-cb6c-467d-906d-610ec8e33637" class="">The thresholds for these satisfaction levels:</p><ul id="6172189d-a97a-4448-a524-60cb678e9f85" class="bulleted-list"><li style="list-style-type:disc"><strong>Green (High Satisfaction):</strong> 70% - 100%</li></ul><ul id="75a1a739-69de-49b8-a362-835e02ce834c" class="bulleted-list"><li style="list-style-type:disc"><strong>Amber (Moderate Satisfaction):</strong> 40% - 69%</li></ul><ul id="937020c9-951a-4038-abd7-fd128c0cb73a" class="bulleted-list"><li style="list-style-type:disc"><strong>Red (Very Low Satisfaction):</strong> 0% - 39%</li></ul><p id="5312b1a3-115b-4dc8-9cb0-8857beb6ed59" class="">
+</p><p id="f96fc356-dc33-4487-88cd-e2595a08cfc8" class="">Below are the MySQL queries:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e19cd27f-43aa-47ad-8b52-18c8a6205abe" class="code"><code class="language-SQL">SELECT AVG(customer_rating) * 20 AS average_rating_percentage
+FROM comp6000_06.Feedback;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4017735e-8b69-402d-8d77-1fe1c00a4c2d" class="code"><code class="language-SQL">SELECT 
+    AVG(f.customer_rating) * 20 AS average_rating_percentage
+FROM 
+    comp6000_06.Feedback f
+JOIN 
+    comp6000_06.BookingServices bs ON f.booking_service_id = bs.booking_service_id
+JOIN 
+    comp6000_06.Bookings b ON bs.booking_id = b.booking_id
+WHERE 
+    b.location_id = ?; -- ? will display the percentage of a particular location</code></pre><p id="3bbc8db5-bc23-4182-abd0-5c8559d1e9ac" class="">
+</p><h3 id="29e9e1ac-570d-4d75-bad1-6ab6693bded6" class="">How to Create Gauge Chart **<strong>Use Alternative as it’s not working</strong></h3><figure id="b44d3b1b-3b11-40b2-959e-4e71ca5a4f2c"><a href="https://www.npmjs.com/package/react-gauge-chart" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">npm: react-gauge-chart</div><div class="bookmark-description">React component for displaying a gauge chart, using D3.js. Latest version: 0.4.1, last published: a year ago. Start using react-gauge-chart in your project by running `npm i react-gauge-chart`. There are 22 other projects in the npm registry using react-gauge-chart.</div></div><div class="bookmark-href"><img src="https://static-production.npmjs.com/1996fcfdf7ca81ea795f67f093d7f449.png" class="icon bookmark-icon"/>https://www.npmjs.com/package/react-gauge-chart</div></div><img src="https://static-production.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" class="bookmark-image"/></a></figure><p id="d1e597f3-8564-4bf2-ab95-c626613b1ce1" class=""><strong>Demo from the Resource Above</strong>:</p><figure id="23e0e920-5474-410e-be69-571b06b92d98"><a href="https://martin36.github.io/react-gauge-chart/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">React App</div></div><div class="bookmark-href"><img src="https://martin36.github.io/react-gauge-chart/favicon.ico" class="icon bookmark-icon"/>https://martin36.github.io/react-gauge-chart/</div></div></a></figure><p id="07f869ae-6253-4391-a7fa-d1496931658b" class="">
+</p><hr id="dce1cdeb-64d4-472e-9723-eccbe88edce8"/><h2 id="9fda647c-6596-4e9c-ada3-80d860e7b6e2" class="">Task 3. Separate Calendar from admin.profile.tsx</h2><ol type="1" id="09e97e8e-1496-4f6b-aeb7-2c5425fcbe62" class="numbered-list" start="1"><li>Create a new file ‘Calendar.tsx’</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6a2b5c9d-a76a-4009-8c74-8c93f9ea9f46" class="code"><code class="language-TypeScript">import React from &#x27;react&#x27;;
+import { Calendar as BigCalendar, momentLocalizer } from &#x27;react-big-calendar&#x27;;
+import moment from &#x27;moment&#x27;;
+import &#x27;react-big-calendar/lib/css/react-big-calendar.css&#x27;;
+
+
+----Rest of the code to create the calendar---------</code></pre><ol type="1" id="09b34485-8258-4840-b1bb-46d1aebce47e" class="numbered-list" start="2"><li>Import the Calendar in both ‘admin.profile.tsx’ and ‘manager.profile.tsx’</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="602e1fb7-a2da-4250-8f9e-2b8d6dc7bc40" class="code"><code class="language-TypeScript">import Calendar from &#x27;./Calendar&#x27;; 
+
+------Rest of the codes--------------------</code></pre><p id="13b20c35-d34a-496c-9e46-20dc5de9f8a1" class="">
+</p><p id="3f1db04e-c2f3-43fd-aca2-b40472a16425" class="">Here’s the link to React Big Calendar resources as you’ve already implemented.</p><figure id="9f516b0e-5f08-4df7-a272-bb3cc7653d86"><a href="https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Webpack App</div></div><div class="bookmark-href">https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page</div></div></a></figure><p id="2ef77741-eb4d-4a42-829d-72ae1a9c6345" class="">
+</p><p id="564e7396-04c2-44e2-b8e3-7568afc6280d" class="">**But you may want to use <strong>Full Calendar</strong> as you can customise easily for our project requirements</p><figure id="ba4d22ef-ca27-4317-970f-764b9cf91e51"><a href="https://fullcalendar.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FullCalendar - JavaScript Event Calendar</div><div class="bookmark-description">FullCalendar provides a highly performant React component that accepts JSX for rendering nested content</div></div><div class="bookmark-href"><img src="https://fullcalendar.io/icons/icon-512x512.png?v=63734d4d33b09dc30c8e6c8f0ff38e19" class="icon bookmark-icon"/>https://fullcalendar.io/</div></div></a></figure><p id="3787d66a-5f74-45b4-a31a-6c0b29bd5920" class="">
+</p><hr id="5004814a-0ac9-4e0b-a6e4-d7d1a77fd9f3"/><h2 id="924e721f-58bf-4653-aa2d-8d3add164e1a" class="">Task 4. Fix the Month Section</h2><p id="45e7ad16-d14c-4273-99cf-33e0a298f68b" class="">You May want to make a new calendar where the month section will be there automatically.</p><p id="15accc88-fccb-479b-9e35-8f75de563711" class="">
+</p><hr id="712fee06-66ed-4344-8861-dba59e0f56df"/><h2 id="455c0d04-58d7-4c2d-9b2d-c77e66545053" class="">Task 5. Redesign The Calendar</h2><figure id="4d89b00a-6fd2-4568-adb4-fdf42cdd16e1"><div class="source"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%201.mp4">https://prod-files-secure.s3.us-west-2.amazonaws.com/314ec157-d4bf-4bc1-a05f-bd8b98157b76/6f124dfb-6cc0-4ba6-b633-a05b082eb3bf/Untitled.mp4</a></div></figure><p id="e98bfef2-84dc-44b6-a42d-d7910abbb448" class="">
+</p><ol type="1" id="29b805aa-d5b5-4f67-8ea0-d4cc4a14bb26" class="numbered-list" start="1"><li>The Popup is in the middle of the screen, not at the bottom of the Calendar</li></ol><ol type="1" id="e2f70e5d-4e68-44b1-9213-6404eaa5d177" class="numbered-list" start="2"><li>Weekly/Daily Calendar times are 8AM - 6PM</li></ol><p id="82b4b12a-d9a2-44fd-843f-25e47811de71" class="">
+</p><h3 id="55749ac0-61f8-4f88-8a97-c50c06a26538" class="">Time Block</h3><p id="44dc7bfb-1122-4447-9070-73f74e9b9d3c" class="">Only Display:</p><ol type="1" id="cd58f5fd-f395-4175-96e1-70fba0412fcb" class="numbered-list" start="1"><li>Vehicle Registration</li></ol><ol type="1" id="fb6f1bcf-dc58-4054-9740-4deafe2d5169" class="numbered-list" start="2"><li>Services</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ba0eefd1-afa6-4acb-8ac6-157502e6f1b5" class="code"><code class="language-SQL">SELECT 
+    V.registration_number,
+    GROUP_CONCAT(DISTINCT S.service_name ORDER BY S.service_name SEPARATOR &#x27;, &#x27;) AS services,
+    B.booking_date,
+    B.booking_start,
+    B.booking_end,
+    B.booking_status,
+    B.location_id
+FROM 
+    comp6000_06.Bookings B
+JOIN 
+    comp6000_06.Vehicle V ON B.vehicle_id = V.vehicle_id
+JOIN 
+    comp6000_06.BookingServices BS ON B.booking_id = BS.booking_id
+JOIN 
+    comp6000_06.Services S ON BS.service_id = S.service_id
+WHERE 
+    B.location_id = ?  -- location_id as a parameter.
+GROUP BY 
+    B.booking_id, B.booking_start, B.booking_end, V.registration_number, B.location_id
+ORDER BY 
+    V.registration_number;
+</code></pre><p id="745c09cb-90cb-4f38-8a8d-79e47ded9cac" class="">
+</p><figure id="a35f592f-960a-4d57-8ff7-97627a2a6eb4" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%201.png"><img style="width:1998px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%201.png"/></a></figure><h3 id="f0c36b3a-d37d-4c82-95fa-0188bbf62755" class="">Note:</h3><ol type="1" id="b0c51731-8ca1-4960-9bcd-cdc1d13a279a" class="numbered-list" start="1"><li>If the booking_status = ‘Active’, then the time block is <strong>blue </strong>colour. This condition is true by default when a new booking is made (i.e. by garage staff or customer).<ol type="a" id="a762e0a7-1d15-4b1d-981b-da94123ff1aa" class="numbered-list" start="1"><li>Here’s an example query in SQL but you may want to do if statements in the front-end to combine all the conditions ‘Active’, ‘Cancelled’, etc. </li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0f1bb835-133a-4205-b18d-f285149037ee" class="code"><code class="language-SQL">SELECT 
+    B.booking_id,
+    V.registration_number,
+    GROUP_CONCAT(DISTINCT S.service_name ORDER BY S.service_name SEPARATOR &#x27;, &#x27;) AS services,
+    B.booking_date,
+    B.booking_start,
+    B.booking_end,
+    B.booking_status,
+    B.location_id
+FROM 
+    comp6000_06.Bookings B
+JOIN 
+    comp6000_06.Vehicle V ON B.vehicle_id = V.vehicle_id
+JOIN 
+    comp6000_06.BookingServices BS ON B.booking_id = BS.booking_id
+JOIN 
+    comp6000_06.Services S ON BS.service_id = S.service_id
+WHERE 
+    B.location_id = ?  -- location_id as a parameter
+    AND B.booking_status= &#x27;Active&#x27;
+GROUP BY 
+    B.booking_id, B.booking_start, B.booking_end, V.registration_number, B.location_id
+ORDER BY 
+    V.registration_number;</code></pre></li></ol><ol type="1" id="16993229-2e5a-4b41-bbe3-c5fd11de0755" class="numbered-list" start="2"><li>If the booking_status = ‘Confirmed’, then the time block is <strong>green </strong>colour. This conditions is true when the booking is confirmed. Basically, customer turned up in the garage and the service has been completed.<ol type="a" id="07bdd1f6-0a8b-4111-9d21-bd8dc6cf934b" class="numbered-list" start="1"><li>Here’s an example query in SQL but you may want to do if statements in the front-end to combine all the conditions ‘Active’, ‘Cancelled’, etc.</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b7cd15f7-d84a-481b-b707-e3998399174d" class="code"><code class="language-SQL">SELECT 
+    V.registration_number,
+    GROUP_CONCAT(DISTINCT S.service_name ORDER BY S.service_name SEPARATOR &#x27;, &#x27;) AS services,
+    B.booking_date,
+    B.booking_start,
+    B.booking_end,
+    B.booking_status,
+    B.location_id
+FROM 
+    comp6000_06.Bookings B
+JOIN 
+    comp6000_06.Vehicle V ON B.vehicle_id = V.vehicle_id
+JOIN 
+    comp6000_06.BookingServices BS ON B.booking_id = BS.booking_id
+JOIN 
+    comp6000_06.Services S ON BS.service_id = S.service_id
+WHERE 
+    B.location_id = ?  -- location_id as a parameter
+    AND B.booking_status= &#x27;Confirmed&#x27;
+GROUP BY 
+    B.booking_id, B.booking_start, B.booking_end, V.registration_number, B.location_id
+ORDER BY 
+    V.registration_number;
+</code></pre></li></ol><p id="71707757-7d6c-4202-b8d7-0ef807b2af28" class="">
+</p><ol type="1" id="4e76580f-9724-42a9-a817-b9286d773eb1" class="numbered-list" start="3"><li>If the booking_status = ‘Cancelled’, then time block is <strong>red </strong>colour. Ideally, we wouldn’t show any cancelled booking. Remember to make a note to ask Kemi about this.<ol type="a" id="7cd38df1-5f59-4741-bc65-9494d792bac4" class="numbered-list" start="1"><li>Here’s an example query in SQL but you may want to do if statements in the front-end to combine all the conditions ‘Active’, ‘Cancelled’ and ‘Confirmed’.</li></ol><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="555f1182-f0cc-49ed-a5fe-3bb62dca82b7" class="code"><code class="language-SQL">SELECT 
+    V.registration_number,
+    GROUP_CONCAT(DISTINCT S.service_name ORDER BY S.service_name SEPARATOR &#x27;, &#x27;) AS services,
+    B.booking_date,
+    B.booking_start,
+    B.booking_end,
+    B.booking_status,
+    B.location_id
+FROM 
+    comp6000_06.Bookings B
+JOIN 
+    comp6000_06.Vehicle V ON B.vehicle_id = V.vehicle_id
+JOIN 
+    comp6000_06.BookingServices BS ON B.booking_id = BS.booking_id
+JOIN 
+    comp6000_06.Services S ON BS.service_id = S.service_id
+WHERE 
+    B.location_id = ?  -- location_id as a parameter
+    AND B.booking_status= &#x27;Cancelled&#x27;
+GROUP BY 
+    B.booking_id, B.booking_start, B.booking_end, V.registration_number, B.location_id
+ORDER BY 
+    V.registration_number;
+</code></pre></li></ol><hr id="0781444b-8e67-4f74-95b6-7259a03d7b39"/><h3 id="b83973fb-49c9-4d98-a4e2-e9b7535efa51" class="">Booking Details Modal when Time Block is Clicked</h3><p id="5f4b58a1-8569-4921-a08e-40313c1ebdf1" class="">The popup should display:</p><ul id="31f13f88-54a5-4ed0-abd8-2c9da3874426" class="bulleted-list"><li style="list-style-type:disc">Booking Number</li></ul><ul id="f045bf18-fbb2-445c-87e6-bf3c5b01a37a" class="bulleted-list"><li style="list-style-type:disc">Customer Name</li></ul><ul id="144de57c-ded2-4421-be90-044b5050cdcb" class="bulleted-list"><li style="list-style-type:disc">Booking Date</li></ul><ul id="a0f7a56a-7dc2-4172-a73c-a6b1411d3cb9" class="bulleted-list"><li style="list-style-type:disc">Time (start and end time)</li></ul><ul id="e964ba3a-e7cb-4fba-b764-93a6680164e0" class="bulleted-list"><li style="list-style-type:disc">Vehicle Registration</li></ul><ul id="f3eb52b4-0442-4eef-bf4c-6c17f9fb01b8" class="bulleted-list"><li style="list-style-type:disc">Vehicle Make</li></ul><ul id="c43cc19f-e84a-4a23-8c29-44046fb18b52" class="bulleted-list"><li style="list-style-type:disc">Vehicle Model - is no longer required (DVLA API doesn’t give us the model). Instead, display:<ul id="58f6fbd3-9ee0-4ba9-a844-fbd70e9ff72d" class="bulleted-list"><li style="list-style-type:circle">Vehicle Colour</li></ul><ul id="8a58b406-707c-42b8-9877-37542f6c0bbb" class="bulleted-list"><li style="list-style-type:circle">Registration Year</li></ul><ul id="45622ac7-fa85-445a-b65c-18306fcafe80" class="bulleted-list"><li style="list-style-type:circle">Fuel Type </li></ul></li></ul><ul id="f0decb29-595b-4f10-bb58-199f14be9f37" class="bulleted-list"><li style="list-style-type:disc">Service Details<ul id="e297ef08-dd90-4a0c-b12b-ddea8ae0b871" class="bulleted-list"><li style="list-style-type:circle">Quantity</li></ul><ul id="d0c15678-94cc-4e94-8959-f0fb045cc12c" class="bulleted-list"><li style="list-style-type:circle">Cost</li></ul></li></ul><ul id="4c9e146a-a123-4cff-a96d-e0749949bced" class="bulleted-list"><li style="list-style-type:disc">Gross Amount</li></ul><ul id="11f503d2-b9d3-4557-b942-4584c30ded94" class="bulleted-list"><li style="list-style-type:disc">Discount Applied = ?</li></ul><ul id="3b0ad14c-2e1e-4b4c-bbbe-a0b07b3c7617" class="bulleted-list"><li style="list-style-type:disc">Net Amount</li></ul><ul id="e4748aff-af9f-4642-908b-d59c17d334f8" class="bulleted-list"><li style="list-style-type:disc">Payment Status</li></ul><ul id="f2d25c78-b046-44eb-8599-caf1086f7662" class="bulleted-list"><li style="list-style-type:disc">Payment Method</li></ul><ul id="29f6821e-7a4f-4da8-96ee-c018814b5704" class="bulleted-list"><li style="list-style-type:disc">Payment Amount</li></ul><div id="0acd5581-084a-459b-bf10-4dfb5dfa5144" class="column-list"><div id="b52284c8-d905-4d22-be1f-015ac26ab5ec" style="width:50%" class="column"><figure id="0a75f792-b134-4fb8-81c3-ce5f5cc48f3f" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%202.png"><img style="width:1168px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%202.png"/></a><figcaption>Template → Only ‘Active’ Bookings</figcaption></figure><p id="774b858f-23de-43ed-ae0b-87532b6a3904" class="">
+</p><figure id="d2d54b45-cb35-4bd7-9342-2197d8d82df9" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%203.png"><img style="width:1168px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%203.png"/></a><figcaption>Example 1: Currently our database holds these records for Booking 1. And the Popup should display this when the time block is clicked. This booking has been made online.</figcaption></figure><p id="0affafee-12d7-44b6-817e-a1b04e535a5e" class="">
+</p></div><div id="93859dc3-6013-4d55-8246-4fc03c3de429" style="width:50%" class="column"><figure id="87d4af2d-e7c3-4e67-a3d0-bdcedded1be5" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%204.png"><img style="width:1168px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%204.png"/></a><figcaption>Template → Only ‘Cancelled’ and ‘Confirmed’ Bookings. No buttons but view only</figcaption></figure><p id="75b6e203-8cc0-4006-98b8-ec0fe85a6cfc" class="">
+</p><figure id="1af42bcf-e3c8-4191-a0f7-e16fbd5b80d3" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%205.png"><img style="width:288px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%205.png"/></a><figcaption>Example 2: Currently our database holds these records for Booking 2.  Scenario → This booking has been created by the staff and the payment is pending because no transactions is made yet.</figcaption></figure><p id="f73a8526-a089-449c-a47a-4257354dd953" class="">
+</p><p id="af34157d-199e-41f8-9eb0-387affd4eb17" class="">
+</p><p id="c607844d-b263-410f-8317-cff4ff16d6e2" class="">
+</p></div></div><p id="7814bfc8-1da8-4c75-8fa0-a2a05c89db1b" class="">Here is a query that displays all information in the modal in one query. </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="015db66b-2637-4baf-9cc2-93c0ed4982f6" class="code"><code class="language-SQL">SELECT 
+    B.booking_id AS Booking_Number,
+    CONCAT(C.first_name, &#x27; &#x27;, C.last_name) AS Customer_Name,
+    B.booking_date,
+    B.booking_start,
+    B.booking_end,
+    V.registration_number AS Vehicle_Registration,
+    V.year AS Vehicle_Year,
+    V.make AS Vehicle_Make,
+    V.vehicle_colour AS Vehicle_Colour,
+    V.fuel_type AS Vehicle_Fuel_Type,
+    GROUP_CONCAT(CONCAT(S.service_name, &#x27; (x&#x27;, BS.quantity, &#x27; @ £&#x27;, FORMAT(S.cost, 2), &#x27;)&#x27;) ORDER BY S.service_name SEPARATOR &#x27;, &#x27;) AS Services_Details,
+    SUM(S.cost * BS.quantity) AS Gross_Amount,
+    IF(T.amount IS NULL AND T.payment_method IS NULL, &#x27;Pending&#x27;, FORMAT(T.amount, 2)) AS Total_Amount_Paid,
+    IF(T.discount_id IS NOT NULL, (SELECT FORMAT(D.discount_amount, 2) FROM comp6000_06.Discount D WHERE D.discount_id = T.discount_id), &#x27;None&#x27;) AS Discount_Applied,
+    FORMAT(SUM(S.cost * BS.quantity) - IFNULL((SELECT D.discount_amount FROM comp6000_06.Discount D WHERE D.discount_id = T.discount_id), 0), 2) AS Net_Amount,
+    B.booking_status,
+    B.payment_status,
+    CASE 
+        WHEN T.amount IS NULL AND T.payment_method IS NULL THEN &#x27;Pending&#x27;
+        ELSE T.payment_method
+    END AS Payment_Method
+FROM 
+    comp6000_06.Bookings B
+INNER JOIN 
+    comp6000_06.Customer C ON B.customer_id = C.customer_id
+INNER JOIN 
+    comp6000_06.Vehicle V ON B.vehicle_id = V.vehicle_id
+INNER JOIN 
+    comp6000_06.BookingServices BS ON B.booking_id = BS.booking_id
+INNER JOIN 
+    comp6000_06.Services S ON BS.service_id = S.service_id
+LEFT JOIN 
+    comp6000_06.Transactions T ON B.booking_id = T.booking_id
+WHERE 
+    B.booking_id = ? -- The ? is the selected booking number of the time block
+GROUP BY 
+    B.booking_id, C.first_name, C.last_name, B.booking_date, B.booking_start, B.booking_end, V.registration_number, V.make, T.amount, T.discount_id, B.booking_status, T.payment_method;</code></pre><p id="7ac531f8-d408-4c68-985a-ef5371637372" class="">
+</p><hr id="befe6d65-fc81-4b43-a71d-b6ee54d39d94"/><h3 id="5fa1946b-a4e8-4908-9dc3-6f223df8a608" class="">When ‘Cancel’ button is clicked in the Booking Details Modal:</h3><figure id="749894e5-ac09-4e42-89ee-2837630faeff" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%206.png"><img style="width:240px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%206.png"/></a><figcaption>Another Modal appears. If ‘Yes’ is clicked, then the steps below are followed.</figcaption></figure><p id="14696073-633d-472c-b75f-6dae1c194061" class="">
+</p><h3 id="6f449b27-ec98-4f86-9e22-8b8c33ed1b3d" class="">Step 1: Check If transaction status is ‘Paid’</h3><p id="ff6a5b5a-b4aa-46ec-8406-3cc4495bee4f" class="">If payment status is ‘Paid’, we need to refund the amount. If the payment status is ‘Pending’, go straight to step 3.</p><h3 id="478b06f2-437b-4ef4-b9c6-49ea3a3bb208" class="">Step 2: Insert a refund transaction (assuming the above check found a payment)</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d68b2e57-807d-483c-a302-5819dfd30b34" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Transactions (booking_id, transaction_date, amount, payment_method)
+VALUES (?, CURRENT_DATE, -ABS(?), ?); -- ? is the booking_id, amount to refund (as positive value), and original payment_method</code></pre><h3 id="6342adea-122b-4aa0-b382-d7a9c376e4a1" class="">Step 3: Update booking_status to &#x27;Cancelled&#x27; and payment status to ‘Refund’</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="eb093588-5002-4dfc-acbb-2360f8789ddb" class="code"><code class="language-SQL">
+UPDATE comp6000_06.Bookings
+SET booking_status = &#x27;Cancelled&#x27;
+SET payment_status = &#x27;Refund&#x27;
+WHERE booking_id = ?; -- ? the actual booking_id</code></pre><p id="bbf96313-b394-4dd5-acd7-d946ae2b0765" class="">
+</p><hr id="528c1b6d-a8c1-4f4f-a51a-46770b768980"/><h2 id="e5fec3ea-f5bd-497d-bd0d-b7d2898ee6ec" class="">When ‘Confirm’ button is clicked in the Booking Details Modal:</h2><figure id="8a025d5f-9fa7-49fb-ad48-d27694d0bba9" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%202.png"><img style="width:240px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%202.png"/></a><figcaption>Template → Only ‘Active’ Bookings</figcaption></figure><figure id="da216db4-f51e-452f-af77-0a23125e81a6" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%207.png"><img style="width:240px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%207.png"/></a><figcaption>Display a new modal when ‘Confirm’ is clicked. If ‘Yes’ is clicked, steps below should be performed.</figcaption></figure><h3 id="e2a99928-8c28-4b22-a379-4b2d52b2f225" class=""><strong><strong>Step 1: Check Payment Status and Amount</strong></strong></h3><p id="0a0ae127-79ac-435f-b6fe-9e3468f18000" class="">You need to check if:</p><p id="c15143a7-998d-4b53-a6e3-9092c60a46c7" class="">1.1 the payment_status = ‘Pending’. </p><p id="5106802a-9b9d-4f27-b913-6a713656df6e" class="">1.2 If Pending, then check the amount that needs to be paid (Net Amount).</p><p id="9f216934-4505-416e-94f0-43629ee757e9" class="">1.3 Prompt a modal for the payment by ‘Cash’ or ‘Card’</p><p id="8b87ec17-0c1d-46e3-8dc6-294580402ef9" class="">If payment_status = ‘Paid’, go straight to Step 3.<div class="indented"><figure id="55f7a89f-ee78-49ea-8d99-e6bf6217a2bd" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%208.png"><img style="width:240px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%208.png"/></a></figure></div></p><h3 id="86b19c7b-963a-48e9-ba54-71e11410ed3e" class="">Step 2: Insert Transaction</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c91b29b5-6d02-4de4-a578-b05afd9077c2" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Transactions (booking_id, transaction_date, amount, payment_method)
+VALUES (?, CURRENT_DATE, ?, ?); -- ? is the booking_id, amount, and payment method</code></pre><h3 id="b3827632-30f5-4259-917c-6c8efb2eed93" class=""><strong>Step 3: </strong>Update booking_status to &#x27;Confirmed&#x27; and payment_status to ‘Paid’. </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="db43f556-3e04-4ee9-8026-a8f3da722a91" class="code"><code class="language-SQL">UPDATE comp6000_06.Bookings
+SET booking_status = &#x27;Confirmed&#x27;, payment_status = &#x27;Paid&#x27;
+WHERE booking_id = ?;</code></pre><h3 id="782eedde-1652-46cd-b64c-8a37d0342a33" class=""><strong>Step 3.2 → Decrease Stock Level</strong></h3><p id="458a17f0-a76a-4ad7-a9f8-8e025dacc387" class="">There are items stored in the inventory. The inventories are stored in the database and the stock level should be decreased when a booking is confirmed.</p><figure id="3df18cfc-f955-49f5-a2f4-cc720498bb59" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%209.png"><img style="width:1176px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%209.png"/></a></figure><p id="8192ec85-6ce3-4f31-8c26-476f959498cf" class="">
+</p><p id="ccb5e76f-9542-4e7d-a67d-bd8f6b1953e4" class="">The services are linked with the inventories:</p><figure id="5128d6af-2002-4522-bceb-d8f5e3b359df" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2010.png"><img style="width:480px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2010.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bb3bfc01-f630-48fe-aa36-2b09abffd91a" class="code"><code class="language-SQL">#You can run this code to visualise ServiceInventoryLink with service name and item name
+SELECT SIL.service_id, S.service_name, SIL.item_id, II.item_name, SIL.quantity_required
+FROM comp6000_06.ServiceInventoryLink AS SIL
+JOIN comp6000_06.Services AS S ON SIL.service_id = S.service_id
+JOIN comp6000_06.InventoryItems AS II ON SIL.item_id = II.item_id
+ORDER BY SIL.service_id, SIL.item_id;</code></pre><p id="e5f0cf20-a0b1-4dc5-a2bc-cda1f9cc4aac" class="">
+</p><p id="8ff8bdff-c917-4255-b88d-6bbbd32ed9ed" class="">In order to achieve both (Updating the booking as confirmed and decreasing stock level), here’s the pseudocode for you to follow.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a13b5d66-f428-40e8-bddb-afd161271555" class="code"><code class="language-Plain Text">function confirmBookingAndDeductInventory(booking_id):
+    // Update booking and payment status
+    executeSQL(&quot;UPDATE comp6000_06.Bookings SET booking_status = &#x27;Confirmed&#x27;, payment_status = &#x27;Paid&#x27; WHERE booking_id = ?&quot;, booking_id)
+
+    // Get all services associated with the booking
+    services = executeSQL(&quot;SELECT service_id FROM comp6000_06.BookingServices WHERE booking_id = ?&quot;, booking_id)
+
+    for service in services:
+        // Get required inventory items for the service
+        items = executeSQL(&quot;SELECT item_id, quantity_required FROM comp6000_06.ServiceInventoryLink WHERE service_id = ?&quot;, service.service_id)
+
+        for item in items:
+            // Deduct the required quantity from the inventory for each item
+            executeSQL(&quot;UPDATE comp6000_06.InventoryItems SET stock_level = stock_level - ? WHERE item_id = ?&quot;, item.quantity_required, item.item_id)</code></pre><p id="a25bb741-baa4-4d5b-ae84-3716d0023fac" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="dd0ad551-087e-4116-85c1-a7cb313e9c2b" class="code"><code class="language-SQL">#Here are the SQL queries that will help you achieve
+
+#Update the Booking to &#x27;Confirmed&#x27; and set payment to &#x27;Paid&#x27;
+UPDATE comp6000_06.Bookings
+SET booking_status = &#x27;Confirmed&#x27;, payment_status = &#x27;Paid&#x27;
+WHERE booking_id = ?;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ab8ba3f9-dee3-4b16-8ec5-4126e442541d" class="code"><code class="language-SQL">#Get Services for Booking
+SELECT service_id
+FROM comp6000_06.BookingServices
+WHERE booking_id = ?; -- Replace ? with the actual booking_id</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4b38d0cc-87f4-4275-8482-f310a8bd27b5" class="code"><code class="language-SQL">#Get Inventory Items and Quantities Required for Each Service
+SELECT item_id, quantity_required
+FROM comp6000_06.ServiceInventoryLink
+WHERE service_id = ?; -- Replace ? with each service_id obtained</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0707801c-c5d8-4db5-bb27-df1ba89d1af0" class="code"><code class="language-SQL">#Deduct Quantities from Inventory
+UPDATE comp6000_06.InventoryItems
+SET stock_level = stock_level - ? -- Replace ? with the quantity_required
+WHERE item_id = ?; -- Replace ? with the actual item_id
+</code></pre><hr id="1f22960d-5a2c-4ee6-93df-6dcaff116875"/><h2 id="f0a525ad-8c51-403f-a605-e496cf0799ca" class="">Task 6. Fix Existing Bugs in the Search Box</h2><ul id="947385bd-2a7e-40c6-99d3-88457929d694" class="bulleted-list"><li style="list-style-type:disc">At the moment, the drop-down/text stays. The drop-down should disappear when you click somewhere else.</li></ul><ul id="82841f57-ad3d-4af4-9782-883c4ac15f4e" class="bulleted-list"><li style="list-style-type:disc">Clicking any text in the list won’t take you to the page. You need to ensure it takes to the appropriate page.</li></ul><hr id="e2ba6e59-5168-43dc-99a3-5be43ec462d2"/><h2 id="c19e1006-986d-4541-9b40-ed964a23f5f7" class="">Task 7. Create a New Booking</h2><p id="bd2ad2e1-5490-4d76-8480-563c3696e3c8" class="">Here’s how Bookings, Services, BookingServices and Transaction Tables were created</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="65866334-fead-400f-9258-004469efa5af" class="code"><code class="language-SQL">CREATE TABLE comp6000_06.Bookings (
+    booking_id INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    vehicle_id INT NOT NULL,
+    location_id INT NOT NULL,
+    booking_date DATE NOT NULL,
+    booking_start TIME NOT NULL,
+    booking_end TIME NOT NULL,
+    booking_status ENUM(&#x27;Active&#x27;, &#x27;Confirmed&#x27;, &#x27;Cancelled&#x27;) NOT NULL DEFAULT &#x27;Active&#x27;,
+    payment_status ENUM(&#x27;Paid&#x27;, &#x27;Pending&#x27;) NOT NULL DEFAULT &#x27;Pending&#x27;,
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
+    FOREIGN KEY (vehicle_id) REFERENCES Vehicle(vehicle_id),
+    FOREIGN KEY (location_id) REFERENCES Garage_Location(location_id)
+);
+
+CREATE TABLE comp6000_06.Services (
+    service_id INT PRIMARY KEY,
+    service_section VARCHAR(50),
+    service_name VARCHAR(100),
+    description VARCHAR(255),
+    cost DECIMAL(10, 2),
+    duration INT
+);
+
+#To allow multiple services to be added to one booking
+CREATE TABLE comp6000_06.BookingServices (
+	booking_service_id INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT,
+    service_id INT,
+    quantity INT DEFAULT 1,
+    FOREIGN KEY (booking_id) REFERENCES comp6000_06.Bookings(booking_id),
+    FOREIGN KEY (service_id) REFERENCES comp6000_06.Services(service_id)
+);
+
+CREATE TABLE comp6000_06.Transactions (
+    transaction_id INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
+    transaction_date DATE NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    payment_method ENUM(&#x27;Cash&#x27;, &#x27;Card&#x27;) NOT NULL,
+    discount_id INT,
+    FOREIGN KEY (booking_id) REFERENCES comp6000_06.Bookings(booking_id),
+    FOREIGN KEY (discount_id) REFERENCES comp6000_06.Discount(discount_id)
+);</code></pre><p id="afd8a170-78a0-41ce-a188-81c6560fd40d" class="">
+</p><p id="618f1378-405d-4eb8-970a-227cf1fa80f9" class="">To create a new booking, you would need to insert a record into the <code><strong>Bookings</strong></code> table. Before doing that, ensure you have the <code><strong>customer_id</strong></code>, <code><strong>vehicle_id</strong></code>, and <code><strong>location_id</strong></code> available from their respective tables (<code><strong>Customer</strong></code>, <code><strong>Vehicle</strong></code>, <code><strong>Garage_Location</strong></code>).</p><p id="9740067b-fd69-4bbd-ba4e-674b60b123d2" class="">When creating a new booking, you need:</p><ul id="d09c95ba-c201-4acd-a83b-87bb981cde30" class="bulleted-list"><li style="list-style-type:disc"><code><strong>customer_id</strong></code></li></ul><ul id="6637b267-c799-4db5-af05-8bd31b894a2d" class="bulleted-list"><li style="list-style-type:disc"><code><strong>vehicle_id</strong></code></li></ul><ul id="e14e1761-0a28-41a1-9208-91b89f1e32b7" class="bulleted-list"><li style="list-style-type:disc"><code><strong>location_id</strong></code></li></ul><ul id="f4fb3e77-2272-40fe-a38f-2a7eae038bdc" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_date</strong></code> → in YYYY-MM-DD format, e.g. &#x27;2024-03-30&#x27;. But when showing on the website, you need to display in DD-MM-YYYY format (which you have already been doing by converting).</li></ul><ul id="addf2991-ba06-4826-b413-b372e0fd465f" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_start</strong></code> → HH:MM:SS format, e.g. &#x27;10:00:00&#x27;</li></ul><ul id="bbe50693-8518-4865-936e-768bb3ea9188" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_end</strong></code> → format same as booking_start. However, the <code><strong>booking_end</strong></code> should be calculated automatically depending by the services booked as each services have duration specified.</li></ul><ul id="42734ea0-fb1d-435b-91b9-0f357fadb2e4" class="bulleted-list"><li style="list-style-type:disc"><strong><code>booking_status</code></strong> → By default ‘Active’. So no need to specify in the query.</li></ul><ul id="ef44ef7c-950f-4517-a6d9-eafefe17af1c" class="bulleted-list"><li style="list-style-type:disc"><strong><code>payment_status</code></strong> → By default ‘Pending’. So no need to specify in the query.</li></ul><p id="4195c9ca-be15-4e67-83a5-dc654c8d4ee9" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5615af76-342c-46c2-82c0-4a6f79299634" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Bookings (customer_id, vehicle_id, location_id, booking_date, booking_start, booking_end) 
+VALUES (?, ?, ?, ?, ?, ?);</code></pre><h3 id="f9b8ef7a-bbae-43f2-ad91-6c73a8157ad4" class="">Query 1:</h3><ul id="745e9a97-1b8d-44c5-ace6-3a8685c6ba56" class="bulleted-list"><li style="list-style-type:disc"><code><strong>customer_id</strong></code> = 1</li></ul><ul id="5e8c2b4f-78ce-404d-af40-df3160b3ca45" class="bulleted-list"><li style="list-style-type:disc"><code><strong>vehicle_id</strong></code> = 1</li></ul><ul id="c99cec8a-95f8-4a74-9cd4-34e134816bb9" class="bulleted-list"><li style="list-style-type:disc"><code><strong>location_id</strong></code> = 1 (Canterbury)</li></ul><ul id="fe6dbb81-8d49-4eae-9ba8-ca2257e84621" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_date</strong></code> = &#x27;2024-03-28&#x27;</li></ul><ul id="b70a3b6b-61f1-406a-b7b3-eeb031d052da" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_start</strong></code> = &#x27;10:00:00&#x27;</li></ul><ul id="0ef5f99b-8f39-44c7-88e3-785d1fc891a8" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_end</strong></code> = &#x27;14:00:00&#x27;</li></ul><p id="2132771d-fec0-4168-b396-30526daa231a" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b1812a7b-3852-4ffd-b18c-e365611ee6e0" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Bookings (customer_id, vehicle_id, location_id, booking_date, booking_start, booking_end)
+VALUES (1, 1, 1, &#x27;2024-03-28&#x27;, &#x27;10:00:00&#x27;, &#x27;14:00:00&#x27;);</code></pre><hr id="b085b5ca-f03a-435a-aec9-16e6b7c7d3ae"/><h3 id="97b0b9e8-4c96-4e92-9744-f8ff3c406434" class="">Query 2:</h3><ul id="0eeefbc6-68dd-47c2-8e26-79aeeb3fa536" class="bulleted-list"><li style="list-style-type:disc"><code><strong>customer_id</strong></code> = 2</li></ul><ul id="c640de2f-d425-4b60-a768-fee1ae92f9ce" class="bulleted-list"><li style="list-style-type:disc"><code><strong>vehicle_id</strong></code> = 2</li></ul><ul id="6697161e-cd97-4be6-8f5a-f90253ae2cf3" class="bulleted-list"><li style="list-style-type:disc"><code><strong>location_id</strong></code> = 2 (Medway)</li></ul><ul id="171b2a7a-9406-4170-a3ae-c5819c8a6c62" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_date</strong></code> = &#x27;2024-03-29&#x27;</li></ul><ul id="ec14c656-f9ea-47eb-8865-a9ced68a8d22" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_start</strong></code> = &#x27;10:00:00&#x27;</li></ul><ul id="b44ac42b-e284-4710-8c16-d20a5742c2a7" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_end</strong></code> = &#x27;14:00:00&#x27;</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="42432c27-12c5-46fa-aaad-daac0332948c" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Bookings (customer_id, vehicle_id, location_id, booking_date, booking_start, booking_end)
+VALUES (1, 1, 1, &#x27;2024-03-29&#x27;, &#x27;10:00:00&#x27;, &#x27;14:00:00&#x27;);</code></pre><hr id="3d3cb139-5a11-4aaf-a7e4-1667d8968635"/><h3 id="c8ddadef-7f7e-448e-a023-b59256c5d7ff" class="">Query 3:</h3><ul id="b7a78a13-d1ac-4194-9be7-1def9aa31222" class="bulleted-list"><li style="list-style-type:disc"><code><strong>customer_id</strong></code> = 4</li></ul><ul id="62f11311-21da-40b1-bfd8-03687d39e13c" class="bulleted-list"><li style="list-style-type:disc"><code><strong>vehicle_id</strong></code> = 3</li></ul><ul id="7810f597-f637-40e3-8f21-4eba0aff7e28" class="bulleted-list"><li style="list-style-type:disc"><code><strong>location_id</strong></code> = 2 (Medway)</li></ul><ul id="c36f377b-b55d-478c-9d5a-c2302fdda5be" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_date</strong></code> = &#x27;2024-03-29&#x27;</li></ul><ul id="1436677a-b1d8-4d19-b1ed-d005e3150c8b" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_start</strong></code> = &#x27;10:00:00&#x27;</li></ul><ul id="fcd1e648-48ee-4fc8-9dbb-ab7e3581a02c" class="bulleted-list"><li style="list-style-type:disc"><code><strong>booking_end</strong></code> = &#x27;14:00:00&#x27;</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3c3700ea-9f1c-4218-ba29-7e4d0c90e961" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Bookings (customer_id, vehicle_id, location_id, booking_date, booking_start, booking_end)
+VALUES (1, 1, 1, &#x27;2024-03-29&#x27;, &#x27;10:00:00&#x27;, &#x27;14:00:00&#x27;);</code></pre><hr id="b5642d9e-631b-4d8d-b70c-7806273aef87"/><h2 id="ec127b87-47c6-4a76-9b9c-15e08b59ca4a" class="">Starting the Tasks:</h2><p id="a2dde5e3-0af3-4b44-8853-7c1325b3d99d" class="">When ‘Add a New Booking’ is clicked, a modal should appear (you can also create a separate .tsx file instead):</p><p id="9dd06abc-741e-4343-aef2-5ec212041239" class="">
+</p><figure id="588420b4-eec0-4f79-86be-cda5f3e862ac" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Blank_diagram_(5).png"><img style="width:336px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Blank_diagram_(5).png"/></a><figcaption>Option to select ‘Existing Customer’ or ‘New Customer’</figcaption></figure><h3 id="0926f4b1-f056-4b38-86df-3b1358fec499" class="">Existing Customer Steps</h3><figure id="72cdba0e-2416-4755-9b9a-26a16691d8ac" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2011.png"><img style="width:288px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2011.png"/></a><figcaption>Step 1: Textbox to enter customer email.</figcaption></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="32d06837-e54a-466c-8c86-ab516aea6e9c" class="code"><code class="language-SQL">#Query to find customer details from email
+SELECT first_name, last_name,
+       CASE
+           WHEN isActive = 1 THEN &#x27;Active&#x27;
+           ELSE &#x27;Deactivated&#x27;
+       END AS status
+FROM comp6000_06.Customer
+WHERE email = ?;</code></pre><p id="12e8314e-c072-4bc9-a288-86e58f69c479" class="">
+</p><h3 id="8c8cf477-5158-4416-a18e-ead0676bb76a" class="">Step 2:</h3><div id="9779d8e3-6a55-4267-97e4-f84e500064be" class="column-list"><div id="84e3cf9d-e470-485c-b4a5-31467f92f1f3" style="width:50%" class="column"><figure id="85834dd4-22e3-480b-8a27-da924a4de0be" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2012.png"><img style="width:336px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2012.png"/></a><figcaption>Step 2.1: If email doesn’t exist, display an error</figcaption></figure><p id="3d780bbb-322e-4140-9861-9d5e3eed4a83" class="">
+</p></div><div id="6a6f6d9b-1053-49ff-aedc-0003ec973131" style="width:50%" class="column"><figure id="0f532c57-192f-457e-9cd4-449b891564e5" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2013.png"><img style="width:336px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2013.png"/></a><figcaption>Step 2.2: If email exists, display their name and status. Note: The ‘Confirm’ button will appear if account status is ‘Active’</figcaption></figure><p id="b1d30aab-011a-4f0c-8042-4b4e27435ab5" class="">
+</p></div></div><div id="d80b0103-58cc-4094-8349-ac854e24847d" class="column-list"><div id="0f15c7ef-5b89-4ef2-8ce3-800cca5de1d1" style="width:50%" class="column"><figure id="3319d1d8-235f-4ecf-b07f-0eae00a69cb8" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Blank_diagram_-_Existing_(4).png"><img style="width:288px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Blank_diagram_-_Existing_(4).png"/></a><figcaption>Step 2.2: If the account status is ‘Deactivated’, then ‘Reactivate’ button appears instead</figcaption></figure></div><div id="66b8c518-28ec-4335-9d75-0bbc7185f356" style="width:50%" class="column"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="250919d2-6d00-4186-91ef-21393bae0cd0" class="code"><code class="language-SQL">UPDATE comp6000_06.Customer
+SET isActive = 1
+WHERE email = ?;</code></pre><p id="304edc64-18c2-4e47-9ddb-85edf6323293" class="">Query to reactivate an account.</p></div></div><p id="874a4b31-7cc5-4534-90b8-ab13e347a6e8" class="">
+</p><h3 id="dc6e1cdc-7e5f-4a18-98af-9388e036d621" class="">Step 3: Add Services</h3><p id="4d5e8508-18e0-4c9f-bc5a-c5b87434783b" class="">How services table was created on MySQL</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c0aa1858-fd82-4401-b69d-cfd067db7d5b" class="code"><code class="language-SQL">CREATE TABLE comp6000_06.Services (
+    service_id INT PRIMARY KEY,
+    service_name VARCHAR(100),
+    description VARCHAR(255),
+    cost DECIMAL(10, 2),
+    duration INT,
+    service_section_id INT,
+    FOREIGN KEY (service_section_id) REFERENCES comp6000_06.Service_Sections(section_id)
+);</code></pre><p id="aa3518da-df30-4a78-91f1-e83c7ff3bcc0" class="">
+</p><div id="a4017461-3c0d-4d21-a84b-e5cc3a357388" class="column-list"><div id="d1f368d9-613f-4efa-945e-3ea0493e3ac2" style="width:50%" class="column"><figure id="fe1284fa-3156-4b62-b052-961f11cb88f7" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2013.png"><img style="width:336px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2013.png"/></a><figcaption>Step 2.2: Once ‘Confirm’ button is clicked, it proceeds to step 3</figcaption></figure></div><div id="a033e8e9-134b-4ef8-897b-2655ae15ddf0" style="width:50%" class="column"><figure id="6e26b282-c112-46bb-bc70-a7b2030fad63" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2014.png"><img style="width:288px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2014.png"/></a><figcaption>Step 3: Add services and select location and time</figcaption></figure></div></div><h3 id="065fcfbd-0e77-447d-a710-8d98a3e8b29e" class="">Step 3:</h3><ul id="2578daaa-46ed-4c0b-b2e9-edcf5b80f3e1" class="bulleted-list"><li style="list-style-type:disc">The ‘Add Service’ is a text or drop-down box. It must be dynamic (getting data from the database). I have given an example where MOT and Interim Service have been added in the table.</li></ul><ul id="a1734dfe-1587-4400-964d-3f3d856f378b" class="bulleted-list"><li style="list-style-type:disc">The Location is a drop-down box where you get the location_name from the Garage_Location table</li></ul><ul id="d0bd9a39-6b77-437d-84cc-48fae80f5c78" class="bulleted-list"><li style="list-style-type:disc">Date → It’s a calendar</li></ul><ul id="33d14971-eaf6-44c1-b9f1-14a629f401b3" class="bulleted-list"><li style="list-style-type:disc">Time → Drop-down box with options such as 09:00 AM, 11:00 AM and 01:00 PM</li></ul><h3 id="a2e99db4-7192-4bac-a597-5905f9ac23e5" class="">Step 4: Confirmation</h3><figure id="87a62c16-a63f-4d51-a092-b2a7eacc5790" class="image"><a href="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2015.png"><img style="width:336px" src="Ethan%20-%20Final%20Tasks%20f3aa38421bb14ccb92ca16a728e273fc/Untitled%2015.png"/></a></figure><p id="bab31c7f-824f-4837-8f81-82023443e65e" class="">
+</p><p id="86fd3c9c-8f1c-4d13-aa68-4632319a9739" class="">Also, needs to be updated in databases (<strong>Work with Wisdom as he’s implementing similar task</strong>)</p><h3 id="fc2888b7-3009-49dd-98a9-198cda1723d6" class=""><strong><strong>Step 4.1: Collect Booking Information</strong></strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="cae8d92e-11c5-4606-9b73-6e6d6b7b14a1" class="code"><code class="language-Plain Text">// For example, bookingInfo is an object containing booking details except for the end time
+bookingInfo = {
+    customer_id: &lt;customer_id&gt;,
+    vehicle_id: &lt;vehicle_id&gt;,
+    location_id: &lt;location_id&gt;,
+    booking_date: &lt;booking_date&gt;,
+    booking_start_time: &lt;booking_start_time&gt;,
+    services: [&lt;service_id1&gt;, &lt;service_id2&gt;, ...] // Array of selected service IDs
+}
+</code></pre><h3 id="64ca56dd-4e56-46ec-acd4-7f26a5ff7d89" class=""><strong><strong>Step 4.2: Calculate Total Service Duration</strong></strong></h3><p id="fc7513ef-775b-4fe5-9711-138adbafc542" class="">When services are selected for a booking, you will need to calculate the total duration. This can be done by summing the <code><strong>duration</strong></code> of all selected services, which are expressed in hours in the <code><strong>Services</strong></code> table.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d3506c06-dda6-4384-bf56-33ddec428ec2" class="code"><code class="language-Plain Text">totalDuration = 0
+
+// For each service ID in bookingInfo.services, fetch the duration and accumulate
+For each service_id in bookingInfo.services do
+    duration = Execute SQL Query to fetch duration for service_id from Services table
+    totalDuration += duration
+
+EndFor
+</code></pre><p id="f54af65f-f0d2-406d-bb80-a59f7b16cc32" class="">For each <code><strong>service_id</strong></code> in the list of selected services (<code><strong>bookingInfo.services</strong></code>), you&#x27;ll run a query to fetch the <code><strong>duration</strong></code>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="94bfd30e-bce3-469f-94ff-a1d00a72a50e" class="code"><code class="language-SQL">SELECT duration
+FROM comp6000_06.Services
+WHERE service_id = ? -- Current service that is being processed in the loop</code></pre><h3 id="dd09233f-8f3f-41ab-bf7c-40c4af358823" class=""><strong><strong>Step 4.3: Calculate Booking End Time</strong></strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d353935d-f2e5-4b93-808c-7b0013296456" class="code"><code class="language-Plain Text">// Convert booking start time to a Date object
+bookingStartTime = Convert bookingInfo.booking_start_time to Date object
+
+// Add totalDuration to bookingStartTime
+// Note: totalDuration is in hours, need to convert to milliseconds (1 hour = 3600000 milliseconds)
+bookingEndTime = new Date(bookingStartTime.getTime() + totalDuration * 3600000)
+
+// Convert bookingEndTime back to a time string format if necessary
+bookingEndTimeString = Convert bookingEndTime to time string format</code></pre><h3 id="9c4803db-f52a-4363-8839-4f685b6cf556" class=""><strong><strong>Step 4.4: Insert the Booking</strong></strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9cb28791-5779-4f24-96eb-dcc06fa8a457" class="code"><code class="language-Plain Text">// Insert the booking into the Bookings table with calculated booking end time
+Execute SQL Query to insert into Bookings table using bookingInfo fields and bookingEndTimeString for booking_end
+Retrieve the generated booking_id from the insert operation</code></pre><p id="68415dd9-7b10-4d6d-8c07-080ccc4be1b0" class="">Here’s the SQL insert code:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c584f15f-92c1-45db-b089-04a8bf92a892" class="code"><code class="language-SQL">INSERT INTO comp6000_06.Bookings
+(customer_id, vehicle_id, location_id, booking_date, booking_start, booking_end, booking_status, payment_status)
+VALUES (?, ?, ?, ?, ?, ?, &#x27;Active&#x27;, &#x27;Pending&#x27;)</code></pre><p id="ad96757a-a186-4f55-82cd-e405dee43e4c" class="">The <code><strong>?</strong></code> placeholders should be replaced with the respective values from <code><strong>bookingInfo</strong></code> and the calculated <code><strong>bookingEndTimeString</strong></code>. This will insert the booking with the end time calculated based on the service durations.</p><h3 id="575127ee-9d83-495d-91cc-4221762b0cbb" class=""><strong><strong>Step 5: Insert Services for the Booking</strong></strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fd04c20b-4f50-4441-8534-0a110fb56627" class="code"><code class="language-Plain Text">// For each service_id in bookingInfo.services, insert into BookingServices table
+For each service_id in bookingInfo.services do
+    Execute SQL Query to insert into BookingServices (booking_id, service_id, quantity) values
+EndFor</code></pre><p id="8a9b3a1f-ccc6-425d-bbb1-cc1c8885cc27" class="">Here’s the SQL insert code:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1589180c-5451-4ebf-80c4-99bf204626de" class="code"><code class="language-SQL">INSERT INTO comp6000_06.BookingServices (booking_id, service_id, quantity)
+VALUES (?, ?, ?)</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
