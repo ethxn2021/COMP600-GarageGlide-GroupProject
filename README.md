@@ -13,5 +13,5 @@ i.	Viewing details of repair services
 ii.	Feedback provision.
 iii.	Allows garages to manage customers and bookings. 
 iv.	Staff can view details of services on cars.
-We took inspiration from these functionalities and integrated them into our system.
+We took inspiration from these functionalities and integrated them into our system
 
