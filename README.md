@@ -1,3 +1,7 @@
+* React
+* SQL
+* TypeScript
+
 This project presents the implementation of a web-based platform for facilitating and managing car maintenance and repair services. 
 Garage Glide is an automotive service provider that offers a range of functionalities for both their customers and staff. 
 The primary objective is to provide a seamless and efficient experience for both car owners and the auto repair shop staff. 
